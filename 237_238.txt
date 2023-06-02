@@ -1,0 +1,49 @@
+delete the repository alixnamoussart/gh-pages-react:
+Pour deleter, il faut donner le password et non le personal access token.
+===
+create alixnamoussart/gh-pages-react:
+mind that default branch is main, not master.
+git config --global init.defaultBranch main <<<<<<<<<<<<<<<<<<<< CA NE MARCHE PAS
+in master: git branch -m main
+===
+local computer:
+Udemy/BogdanStashchuk:
+npx create-react-app gh-pages-react
+
+in gh-pages-react:
+npm install -D gh-pages
+
+in package.json:
+"homepage": "";
+
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build"
+
+git remote add origin https://github.com/alixnamoussart/gh-pages-react.git
+git add, commit
+git push -u origin main
+
+===
+sur le site alixnamoussart/gh-pages-react et non sur le site claudelepere:
+find Settings for the repository:
+Pages:
+Branch: main
+Save
+=>
+Your site is live at https://alixnamoussart.github.io/gh-pages-react/
+
+"homepage": "https://alixnamoussart.github.io/gh-pages-react/"
+git add, commit, push
+
+npm run deploy
+
+===
+
+un index.html à moi:
+in the root: index.html à moi
+git add, commit, push
+npm run deploy
+
+===
+
+

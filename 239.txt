@@ -1,0 +1,61 @@
+error with cached HTTPS credentials:
+You may see such errors if you are using multiple GitHub accounts on the same computer. In order to permanently solve
+this you could setup SSH connection instead of HTTPS.
+
+remote: Permission to mikegithubber/gh-pages-react.git denied to bstashchuk.
+Ou plutôt:
+Username for 'https://github.com': alixnamoussart         
+Password for 'https://alixnamoussart@github.com': 
+
+===
+
+setup SSH authentication based on public key
+
+===
+
+GitHub: alixnamoussart (and not claudelepere): Settings: SSH and GPG keys: Generating a new SSH key and adding it to the ssh-agent: Linux:
+ssh-keygen -t ed25519 -C "alixnamoussart@gmail.com": Ed25519 better than RSA
+
+/home/clep/.ssh/id_ed25519
+no passphrase
+/home/clep/.ssh/id_ed25519 and id_ed25519.pub: no known_hosts as with RSA! WRONG: known_hosts appears later, after the first uses.
+
+===
+
+alixnamoussart: Settings: SSH and GPG keys: New SSH key:
+Title: My Linux
+Key: ed25519.pub
+=>
+use SSH authentication for any repository under alixnamoussart account
+
+===
+
+npm run deploy
+=>
+"deploy" creates a branch "gh-pages":
+fatal: A branch named 'gh-pages' already exits: this error does not appear in my local repo.
+
+===
+
+adjust url for origin server: HTTPS protocol to SSH protocol: 
+GitHub: alixnamoussart: Code: SSH: git@github.com:alixnamoussart/gh-pages-react.git 
+
+local repo: git remote -v:
+origin  https://github.com/alixnamoussart/gh-pages-react.git (fetch)
+origin  https://github.com/alixnamoussart/gh-pages-react.git (push)
+
+git remote set-url origin git@github.com:alixnamoussart/gh-pages-react.git
+git remote -v:
+origin	git@github.com:alixnamoussart/gh-pages-react.git (fetch)
+origin	git@github.com:alixnamoussart/gh-pages-react.git (push)
+
+===
+
+npm run deploy:
+The authenticity of host 'github.com' (...) can't be established.
+RSA key fingerprint is SHA256:...
+Are you sure you want to continue connecting (yes/no)? yes
+fingerprint of the remote RSA key: see
+https://askubuntu.com/questions/76337/where-is-the-ssh-server-fingerprint-generated-stored
+
+===

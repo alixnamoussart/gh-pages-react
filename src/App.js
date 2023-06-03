@@ -8,9 +8,9 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
-          <br>
-          My awesome GitHub Page running using React.
-          </br>
+        </p>
+        <p>
+          My awesome GitHub Page running using React. I'm fool!
         </p>
         <a
           className="App-link"

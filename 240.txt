@@ -1,3 +1,19 @@
 240. Verifying React GitHub Page
 ________________________________
+SSH keys:
+in GitHub, you can add multiple keys if you are using multiple computers for interaction with your GitHub account.
+
+create a React application and publish it using GitHub Pages
+
+switch to gh-pages branch in the remote GitHub repo: created by gh-pages script:
+it has index.html in the root of your repo to be able to host it using GitHub pages:
+the gh-pages script takes all the contents of a specific folder (build), it creates a new branch gh-pages and pushes
+all the changes
+
+in GitHub: alixnamoussart/gh-pages-react: Settings: Pages: GitHubPages: Build and deployment: Branch:
+gh-pages and Save
+=>
+You site is live at https://alixnamoussart.github.io/gh-pages-react
+
+modify App.js (= homepage) in src, add, commit, push, npm run deploy
 

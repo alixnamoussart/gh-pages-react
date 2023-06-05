@@ -1,0 +1,57 @@
+241. Configuring custom domain for GitHub Pages
+_______________________________________________
+1. create React app
+2. build it
+3. deploy it using gh-pages script
+4. url of the webpage = https://mikegithubber.github.io/gh-pages-react/
+
+Web page = webpage is shortened to page
+Web site = website is shortened to site
+
+===
+
+Each user of GitHub has a subdomain of the github.io domain.
+
+setup DNS settings for your website to be able to use GitHub Pages
+
+===
+
+domain
+______
+https://www.cloudflare.com/learning/dns/glossary/what-is-a-domain-name/:
+What is a domain name?
+A domain name is a string of text that maps to an alphanumeric IP address, used to access a website from client software. In plain English, a domain name is the text that a user types into a browser window to reach a particular website. For instance, the domain name for Google is ‘google.com’.
+
+The actual address of a website is a complex numerical IP address (e.g. 192.0.2.2), but thanks to DNS, users are able to enter human-friendly domain names and be routed to the websites they are looking for. This process is known as a DNS lookup.
+
+What is the difference between a domain name and a URL?
+A uniform resource locator (URL), sometimes called a web address, contains the domain name of a site as well as other information, including the protocol and the path. For example, in the URL ‘https://cloudflare.com/learning/’, ‘cloudflare.com’ is the domain name, while ‘https’ is the protocol and ‘/learning/’ is the path to a specific page on the website.
+
+===
+
+reverse proxy
+_____________
+https://www.cloudflare.com/learning/cdn/glossary/reverse-proxy/#:~:text=A%20reverse%20proxy%20is%20a,security%2C%20performance%2C%20and%20reliability.
+
+===
+
+alixnamoussart/gh-pages-react > Settings > Pages > Custom domain > gh-pages.stashchuk.com > Save: 
+
+adjust DNS settings of the stashchuk domain > Cloudflare > add a new CNAME record:
+Type: CNAME 
+Name:gh-pages
+Target: mikegithubber.github.io
+
+=>
+gh-pages.stashchuk.com is an alias for mikegithubber.github.io and has its traffic proxied through Cloudflare.
+
+KO with links to resources = not using relative urlz > package.json > "homepage": "https://mikegithubber.github.io/" > add and
+commit > push > npm run deploy
+=>
+problem: Custom domain has been reset by deploy > reenter gh-pages.stashchuk.com > Your site is published at
+https://gh-pages.stashchuk.com/
+
+"Modified React homepage"
+
+flaw = I need to reconfigure the custom domain each time the application is deployed
+

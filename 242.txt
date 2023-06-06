@@ -1,4 +1,0 @@
-242. Creating static GitHub Page using markdown
-_______________________________________________
-static website with GitHub only: https://stackoverflow.com/questions/71895970/can-i-use-github-as-hosting-for-dynamic-websites-if-so-how#:~:text=GitHub%20Pages%20is%20for%20static,a%20backend%20or%20secret%20data. 
-
